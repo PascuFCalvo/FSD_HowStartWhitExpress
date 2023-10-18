@@ -7,6 +7,7 @@ import express from "express";
 const app = express();
 
 //habilita un puerto donde lo dejas escuchando, primer parametro un puerto y como segundo la funcion callback
-app.listen(4000, () => {
+app.listen(3000, () => {
    console.log("Server running");
+   
 })
