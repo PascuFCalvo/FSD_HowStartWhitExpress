@@ -2,8 +2,11 @@
 //importar express
 import express from "express";
 
+const PORT = process.env.PORT || 3000;
+
 //ejecutar express y guardalo en la constante app
 const app = express();
+
 
 //empezar a crear la logica
    //crear primera url del backend (endpoints)
@@ -52,8 +55,8 @@ app.delete("/films/:id", (req, res)=>{
 })
 
 //habilita un puerto donde lo dejas escuchando, primer parametro un puerto y como segundo la funcion callback
-app.listen(3000, () => {
-   console.log("Server running");
+app.listen(PORT, () => {
+   console.log(`server running in port ${PORT}`);
    
 })
 
