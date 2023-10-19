@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 //le decimos a la app que use lo que nos hemos traido de router
-app.use("/", routerFilms)
+app.use("/films", routerFilms)
 //empezar a crear la logica
 
 //crear primera url del backend (endpoints)
