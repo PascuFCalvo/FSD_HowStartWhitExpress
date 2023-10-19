@@ -12,11 +12,9 @@ router.get("/films", (req, res) => {
  
  router.get("/films/:id", (req, res) => {
    //logica de lo que quieras hacer/devolver
- 
    //como pintar en consola el parametro que hemos metido en la ruta despues de films/ (en la consulta en el thunderclient)
    console.log(req.params);
    //como es un objeto podemos acceder a su id
-   
    //como ya sabemos como recuperar , lo guardamos en una constante
    const filmsId = req.params.id;
    console.log(filmsId);
@@ -47,5 +45,5 @@ router.get("/films", (req, res) => {
    console.log("delete");
    return res.send("DELETE films");
  });
- 
+
 export { router }
