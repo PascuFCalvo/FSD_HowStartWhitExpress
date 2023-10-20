@@ -1,3 +1,6 @@
+Iniciar el proyecto
+
+
 npm init
 npm install express
 git init
@@ -5,7 +8,58 @@ npm install typescript -D
 npx tsc --init
 npm install @types/express @types/node -D
 npm install ts-node nodemon -D
-buscar en el tsconfig.json la linea donde esta el outdir y poner ahi la ruta
+buscar en el tsconfig.json la linea donde esta el outdir y poner ahi la ruta: "outDir": "./build",   
 npm install nodemon
 npx nodemon ./src/index.ts
-en el package json , en scripts, hacer el script dev con el punto de entrada 
+en el package json , en scripts, hacer el script dev con el punto de entrada y el buiid: 
+   "dev": "nodemon ./src/index.ts",
+   "build": "tsc"
+
+
+------------
+
+Installar type ORM
+
+
+npm install typeorm --save
+npm install reflect-metadata --save
+npm install @types/node --save-dev
+npm install mysql2 --save (para sql...si fuera postgress u otra pues el que corresponda)
+
+------------
+
+descomentar la 17 y 18 expermiental decorators...
+
+creamos el archivo de conexion a la bbdd
+
+database.ts
+
+import "reflect-metadata"
+import { DataSource } from "typeorm"
+export const AppDataSource = new DataSource({
+ type: "mysql",
+ host: "localhost",
+ port: 3306,
+ username: "root",
+ password: "",
+ database: "test",
+ entities: [],
+ synchronize: false,
+ logging: false,
+})
+
+------------
+
+Añadimos al index los siguietes trozo de codigo
+
+import { AppDataSource } from "../database";
+
+AppDataSource.initialize()
+.then(() => {
+ console.log('Database connected');
+})
+.catch(error => {
+ console.log(error)
+})
+
+metemos el app.listen dentro del then para que la api solo arranque si conecta con la base de datos

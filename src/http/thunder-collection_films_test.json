@@ -1,0 +1,70 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "films_test",
+    "dateExported": "2023-10-19T11:07:19.017Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "8c71f836-5c8d-4674-93ea-d2a2ea2a9f7c",
+            "colId": "0de5d925-4fb0-4a45-82b3-14b4f0a478c8",
+            "containerId": "",
+            "name": "GET a films",
+            "url": "localhost:3000/films/2",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2023-10-18T11:06:55.187Z",
+            "modified": "2023-10-19T09:53:18.649Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "60faba4e-ce88-449b-8d1d-f00b452845f7",
+            "colId": "0de5d925-4fb0-4a45-82b3-14b4f0a478c8",
+            "containerId": "",
+            "name": "POST a films",
+            "url": "localhost:3000/films",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-10-18T11:07:06.673Z",
+            "modified": "2023-10-19T10:53:05.722Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"titulo\" :  \"El cienpies humano\",\n  \"director\" : \"Borja Flipao\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a14c189c-9b11-4471-b590-a7f6bb062629",
+            "colId": "0de5d925-4fb0-4a45-82b3-14b4f0a478c8",
+            "containerId": "",
+            "name": "PUT a films",
+            "url": "localhost:3000/films/2000",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-10-18T11:08:16.468Z",
+            "modified": "2023-10-18T11:28:22.728Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c2664cb1-f4b4-4dd4-9437-bad269ad4702",
+            "colId": "0de5d925-4fb0-4a45-82b3-14b4f0a478c8",
+            "containerId": "",
+            "name": "DELETE a films",
+            "url": "localhost:3000/films/200",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-10-18T11:10:17.698Z",
+            "modified": "2023-10-18T11:31:56.608Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
