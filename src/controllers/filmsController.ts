@@ -1,10 +1,13 @@
 //aqui ira la logica de cada direccion de routes
 import { Request, Response } from "express";
+import {Film} from "../models/Film"
 
-const getAllFilms = (req: Request, res: Response) => {
-  //logica de lo que quieras hacer/devolver
-  console.log("get");
-  return res.send("GET films");
+const getAllFilms = async(req: Request, res: Response) => {
+  
+   const films =  await Film.find()
+  
+   console.log("get");
+   return res.send(films);
 };
 
 const getAFilmById = (req: Request, res: Response) => {

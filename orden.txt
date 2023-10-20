@@ -93,3 +93,6 @@ comando para ejecutar las migraciones:
 creamos la carpeta models donde meteremos las clases para rellenar las tablas
 
 npx typeorm entity:create ./src/models/Film
+
+
+hay que meter en entitites dentro del database.ts el nombre de la entidad: Film
