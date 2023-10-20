@@ -63,3 +63,24 @@ AppDataSource.initialize()
 })
 
 metemos el app.listen dentro del then para que la api solo arranque si conecta con la base de datos
+
+
+
+------------
+
+crear una migracion con el cli de typeorm
+
+npx typeorm migration:create ./src/migration/film 
+
+comando para ejecutar las migraciones: 
+
+1º
+ //añadimos las migraciones que tiene que lanzar en el archivo donde estan las credenciales
+
+ migrations:[], y ahi metes FilmXXXXXXXXXXX que esta en el database.ts
+
+   ESTE COMANDO ES PARA ENTRAR EN EL UP:
+   npx typeorm-ts-node-commonjs migration:run -d ./[direccion de tu archivo conexion a bbdd.ts] en este caso ./databese.ts
+
+   CON ESTE ENTRAMOS EN EL DOWN:
+   npx typeorm-ts-node-commonjs migration:revert -d ./database.ts
