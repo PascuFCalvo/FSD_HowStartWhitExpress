@@ -1,13 +1,12 @@
 //aqui ira la logica de cada direccion de routes
 import { Request, Response } from "express";
-import {Film} from "../models/Film"
+import { Film } from "../models/Film";
 
-const getAllFilms = async(req: Request, res: Response) => {
-  
-   const films =  await Film.find()
-  
-   console.log("get");
-   return res.send(films);
+const getAllFilms = async (req: Request, res: Response) => {
+  const films = await Film.find();
+
+  console.log("get");
+  return res.send(films);
 };
 
 const getAFilmById = (req: Request, res: Response) => {
@@ -22,13 +21,18 @@ const getAFilmById = (req: Request, res: Response) => {
   return res.send("GET films");
 };
 
-const createAFilmById = (req: Request, res: Response) => {
-  let id = req.params.id
-  let pelicula = req.body;
-  //logica para crear peliculas
-  
-  console.log(pelicula)
-  return res.send(`posted fim in id ${id}`);
+const createAFilmById = async (req: Request, res: Response) => {
+  try {
+    let nuevaPelicula = req.body;
+    await Film.create({
+      title: req.body.title,
+      director: req.body.director,
+    }).save();
+
+    return res.send(nuevaPelicula);
+  } catch (error) {
+    return res.send(error);
+  }
 };
 
 const modifyAFilmById = (req: Request, res: Response) => {
