@@ -84,3 +84,12 @@ comando para ejecutar las migraciones:
 
    CON ESTE ENTRAMOS EN EL DOWN:
    npx typeorm-ts-node-commonjs migration:revert -d ./database.ts
+
+   (he creado 2 scripts, mig y rev)
+
+
+-------------
+
+creamos la carpeta models donde meteremos las clases para rellenar las tablas
+
+npx typeorm entity:create ./src/models/Film

@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "mig": "npx typeorm-ts-node-commonjs migration:run -d ./database.ts",
+    "rev": "npx typeorm-ts-node-commonjs migration:revert -d ./database.ts"
   },
   "author": "pascu",
   "license": "ISC",
