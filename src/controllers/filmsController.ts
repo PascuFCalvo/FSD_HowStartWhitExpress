@@ -63,7 +63,10 @@ const deleteAFilmById = async (req: Request, res: Response) => {
     });
 
     let filmRemoved = await Film.remove(filmToRemove as Film); // hay que ponerle un as Film para que no chille typescript
+    console.log(filmRemoved)
     return res.send(filmRemoved);
+    
+
   } catch (error) {
     return res.send(error);
   }
